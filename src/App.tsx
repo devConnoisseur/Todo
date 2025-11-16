@@ -22,7 +22,6 @@ export default function App() {
   });
   const dialogRef = useRef<DialogHandle>(null);
 
-
   useEffect(() => {
     localStorage.setItem("todo", JSON.stringify(todo));
   }, [todo]);
@@ -33,7 +32,7 @@ export default function App() {
         (tdx) => tdx.title.toLowerCase() === todoState.title.toLowerCase()
       );
       if (isExisting) return prevTodo;
-      return [...prevTodo, todoState];
+      return [todoState, ...prevTodo];
     });
   }
 
