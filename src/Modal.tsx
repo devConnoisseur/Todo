@@ -19,6 +19,7 @@ const Modal = forwardRef<DialogHandle, ModalProps>(function (
   const [todoNote, setTodoNote] = useState("");
 
   function handleSetTodo() {
+    if (!todoNote || todoNote.length < 3) return;
     handleTodo({
       id: Date.now(),
       title: todoNote,
