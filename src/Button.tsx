@@ -1,10 +1,9 @@
-type ButtonProps = {
+type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   children: React.ReactNode;
-  onClick?: () => void;
 };
 
-function Button({ onClick, children }: ButtonProps) {
-  return <button onClick={onClick}>{children}</button>;
+function Button({ children, ...rest }: ButtonProps) {
+  return <button {...rest}>{children}</button>;
 }
 
 export default Button;

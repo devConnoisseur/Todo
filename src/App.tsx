@@ -4,9 +4,9 @@ import { useEffect, useRef, useState } from "react";
 import Modal, { type DialogHandle } from "./Modal";
 
 import { type Todo } from "./Todo.types";
-import TodoItem from "./TodoItem";
 import ToggleTodo from "./ToggleTodo";
 import Header from "./Header";
+import TodoList from "./TodoList";
 
 export default function App() {
   const [todo, setTodo] = useState<Todo[]>(() => {
@@ -68,10 +68,11 @@ export default function App() {
               </div>
             )}
 
-            <TodoItem
+            <TodoList
               handleToggle={handleToggle}
               todo={todo}
               handleDeleteTodo={handleDeleteTodo}
+              setTodo={setTodo}
             />
 
             <Modal
